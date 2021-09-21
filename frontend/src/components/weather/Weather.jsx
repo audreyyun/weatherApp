@@ -9,7 +9,8 @@ const Weather = ({ weather, zip, country, fetchWeather }) => {
     // const currentWeather = weather.weather[0]
     // console.log("i am in weather", weather.weather[0])
     return (
-        <div>
+        <div className="weather-page-container">
+            <h1>Audrey's Weather App</h1>
             {/* <Input setZip={setZip} setCountry={setCountry} fetchWeather={fetchWeather}/> */}
             <Input fetchWeather={fetchWeather}/>
             {/* <WeatherInfo zip={zip} country={country}/> */}

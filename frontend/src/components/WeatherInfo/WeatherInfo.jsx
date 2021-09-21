@@ -30,17 +30,17 @@ import {fetchWeather} from '../../util/weatherAPIUtil';
 // }
 
 export const convertTemperature = k => {
-    const fahrenheit = 1.8 * (k - 273) + 32
-    const celsius = k - 273
+    const fahrenheit = (1.8 * (k - 273) + 32).toFixed(2);
+    const celsius = (k - 273).toFixed(2);
+
     return {
         fahrenheit,
         celsius
     }
-}
+};
 
-// const WeatherInfo = ( weather ) => { 
 const WeatherInfo = ({ weather }) => { 
-    // const [weatherData, setWeatherData] = useState({});
+
     const currentWeather = weather;
     const temperatures = weather ? weather.main: '';
     const weatherData = weather.weather ? weather.weather[0] : '';
@@ -71,25 +71,34 @@ const WeatherInfo = ({ weather }) => {
         description: weatherData.description,
         main: weatherData.main,
         city: weather.name,
-        // currentTemp: temperatures.temp,
+        currentTemp: convertTemperature(temperatures?.temp).fahrenheit,
         // feels_like: temperatures.feels_like,
-        // minTemp: temperatures.temp_min,
-        // maxTemp: temperatures.temp_max
-    }
+        minTemp: convertTemperature(temperatures?.temp_min).fahrenheit,
+        maxTemp: convertTemperature(temperatures?.temp_max).fahrenheit
+    };
 
     const iconSrc = `http://openweathermap.org/img/wn/${testingWeatherObject.icon}@4x.png`;
-    // console.log("this is the city", name)
-    // console.log("i am in weather info",main)
-    return (
-        <>
-            <p>{testingWeatherObject.city}</p>
-            <img src={iconSrc} alt="weather icon" />
-            {/* <p>{temp}</p>
-            <p>{temp_min}</p>
-            <p>{temp_max}</p> */}
-        </>
-    )
 
-}
+    if (!weatherData) { 
+        return (
+            <>
+                <div>Please enter a zip code and choose a country to receive information on today's weather!</div>
+            </>
+        )
+    } else { 
+        return (
+            <div className="weather-info-container">
+                <div className="weather-info">
+                    <h1 className="weather-info-city">{testingWeatherObject.city}</h1>
+                    <h3>{testingWeatherObject.description}</h3>
+                    <img src={iconSrc} alt="weather icon" />
+                    <p>Current Temperature: {testingWeatherObject.currentTemp}</p>
+                    <p>Min Temperature: {testingWeatherObject.minTemp}</p>
+                    <p>Max Temperature: {testingWeatherObject.maxTemp}</p>
+                </div>
+            </div>
+        )
+    };
+};
 
 export default WeatherInfo;
