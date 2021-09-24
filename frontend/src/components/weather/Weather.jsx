@@ -1,22 +1,13 @@
 import React from 'react';
-import Input from '../input/Input'
+import LocationForm from '../locationForm/LocationForm'
 import WeatherInfo from '../WeatherInfo/WeatherInfo'
 
-// const Weather = ({ weather, zip, country, fetchWeather }) => { 
-const Weather = ({ weather, zip, country, fetchWeather }) => { 
-    // const [zip, setZip] = useState('');
-    // const [country, setCountry] = useState('');
-    // const currentWeather = weather.weather[0]
-    // console.log("i am in weather", weather.weather[0])
+const Weather = ({ weather, fetchWeather }) => { 
     return (
         <div className="weather-page-container">
-            <h1>Audrey's Weather App</h1>
-            {/* <Input setZip={setZip} setCountry={setCountry} fetchWeather={fetchWeather}/> */}
-            <Input fetchWeather={fetchWeather}/>
-            {/* <WeatherInfo zip={zip} country={country}/> */}
+            <h1 className="app-title">Audrey's Weather App</h1>
+            <LocationForm fetchWeather={fetchWeather}/>
             <WeatherInfo weather={weather} />
-            {/* <WeatherInfo weather={currentWeather} /> */}
-            {/* <WeatherInfo weather={weather?.weather[0]} /> */}
         </div>
     );
 

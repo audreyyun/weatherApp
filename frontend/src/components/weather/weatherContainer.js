@@ -14,7 +14,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchWeather: (zip, country) => dispatch(fetchWeather(zip, country)),
+        // fetchWeather: (zip, country) => dispatch(fetchWeather(zip, country)),
+        fetchWeather: (city) => dispatch(fetchWeather(city)),
     }
 }
 

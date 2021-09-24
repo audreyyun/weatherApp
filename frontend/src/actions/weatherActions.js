@@ -15,12 +15,12 @@ export const receiveWeatherError = error => ({
     error,
 })
 
-export const fetchWeather = (zip, country) => dispatch => {
+export const fetchWeather = (city) => dispatch => {
     console.log("im here in actions");
-    console.log("im here in actions, zip",zip);
-    console.log("im here in actions,country", country);
+    console.log("im here in actions, city",city);
+    // console.log("im here in actions,country", country);
     return (
-    fetchWeatherAPI(String(zip), String(country))
+    fetchWeatherAPI(city)
         .then(weather => {
             console.log("this is weather", weather)
             dispatch(receiveWeather(weather.data));
@@ -28,3 +28,18 @@ export const fetchWeather = (zip, country) => dispatch => {
         })
         .catch(err => dispatch(receiveWeatherError(err)))
 )};
+
+
+// export const fetchWeather = (zip, country) => dispatch => {
+//     console.log("im here in actions");
+//     console.log("im here in actions, zip",zip);
+//     console.log("im here in actions,country", country);
+//     return (
+//     fetchWeatherAPI(String(zip), String(country))
+//         .then(weather => {
+//             console.log("this is weather", weather)
+//             dispatch(receiveWeather(weather.data));
+//             // dispatch(receiveWeather(weather));
+//         })
+//         .catch(err => dispatch(receiveWeatherError(err)))
+// )};

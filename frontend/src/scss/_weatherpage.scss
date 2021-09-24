@@ -1,0 +1,54 @@
+@import '_colors.scss';
+
+body { 
+    height: 100%;
+    background: $main;
+    overflow: hidden;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.weather-page-container { 
+    height: 100%;
+    margin: 1rem;
+    opacity: 90%;
+    padding: 1em;
+
+    h1 { 
+        display: flex;
+        justify-content: center;
+
+        font-size: 1.5em;
+        color:rgb(236, 239, 255);
+    }
+}
+
+
+
+// .toggle { 
+//     -webkit-appearance: none;
+//     outline: none;
+//     position: relative;
+//     width: 100px;
+//     height: 50px;
+//     border-radius: 50px;
+//     background-color: lightblue;
+// }
+
+// .toggle:before { 
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 50px;
+//   height: 50px;
+//   background-color: navy;
+//   border-radius: 50px;
+// }
+
+// .toggle:checked {
+//   background-color: orange;
+// }
+// .toggle:checked:before {
+//   transform: translate(100%);
+// }
