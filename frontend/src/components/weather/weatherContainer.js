@@ -8,14 +8,16 @@ const mSTP = state => {
         weather: state.weather,
         weatherAPIerror: state.weatherAPIerror,
         zip: state.zip,
-        country: state.country
+        country: state.country, 
+        // lat: state.lat, 
+        // lon: state.lon
     };
 };
 
 const mDTP = dispatch => {
     return {
-        // fetchWeather: (zip, country) => dispatch(fetchWeather(zip, country)),
         fetchWeather: (city) => dispatch(fetchWeather(city)),
+        // fetchLocation: (lat, lon) => dispatch(fetchWeather(lat, lon)),
     }
 }
 

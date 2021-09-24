@@ -1,19 +1,6 @@
 import React from 'react';
 
-// export const convertTemperature = k => {
-//     const fahrenheit = (1.8 * (k - 273) + 32).toFixed(2);
-//     const celsius = (k - 273).toFixed(2);
-
-//     return { 
-//         fahrenheit, 
-//         celsius
-//     }
-
-// };
-
 const WeatherInfo = ({ weather }) => { 
-
-    let toggleTempF = true;
     const currentWeather = weather;
     const temperatures = weather ? weather.main: '';
     const weatherData = weather.weather ? weather.weather[0] : '';
@@ -56,7 +43,6 @@ const WeatherInfo = ({ weather }) => {
         return (
             <div className="weather-info-container">
                 <div className="weather-info">
-                    {/* <input className="toggle" type="checkbox" defaultCheck={toggleTempF} onChange={toggleTemp}/> */}
                     <h1 className="weather-info-city">{testingWeatherObject.city}</h1>
                     <h3>{testingWeatherObject.description}</h3>
                     <img src={iconSrc} alt="weather icon" />
