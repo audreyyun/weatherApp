@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import useLocation from '../../hooks/useLocation';
 
 const geolocationOptions = {
@@ -6,9 +6,9 @@ const geolocationOptions = {
 };
 
 const LocationForm = ({ fetchWeather }) => {
-    console.log("I am in input", fetchWeather)
+    // console.log("I am in input", fetchWeather);
     const [city, setCity] = useState('');
-    const {location, error } = useLocation(geolocationOptions)
+    const { location, error } = useLocation(geolocationOptions);
 
 
     const handleCityChange = e => {
@@ -16,11 +16,15 @@ const LocationForm = ({ fetchWeather }) => {
         setCity(e.target.value)
     };
 
-    if (location && !city) { 
-        setCity(location);
-        fetchWeather(location);
-    };
+    const handleFetchWeather = useCallback( async (location) => { 
+            fetchWeather(location) 
+    },[]);
 
+    useEffect(() => {
+            setCity(location);
+            handleFetchWeather(location)
+    },[location]);
+        
     const handleSubmit = () => { 
         fetchWeather(city)
     };
@@ -35,5 +39,6 @@ const LocationForm = ({ fetchWeather }) => {
             </div>
         </div>
     )
-}
+};
+
 export default LocationForm;

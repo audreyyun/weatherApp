@@ -9,15 +9,12 @@ const mSTP = state => {
         weatherAPIerror: state.weatherAPIerror,
         zip: state.zip,
         country: state.country, 
-        // lat: state.lat, 
-        // lon: state.lon
     };
 };
 
 const mDTP = dispatch => {
     return {
         fetchWeather: (city) => dispatch(fetchWeather(city)),
-        // fetchLocation: (lat, lon) => dispatch(fetchWeather(lat, lon)),
     }
 }
 

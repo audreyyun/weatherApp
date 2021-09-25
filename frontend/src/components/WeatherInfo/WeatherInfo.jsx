@@ -4,9 +4,6 @@ const WeatherInfo = ({ weather }) => {
     const currentWeather = weather;
     const temperatures = weather ? weather.main: '';
     const weatherData = weather.weather ? weather.weather[0] : '';
-    console.log("i am current Weather", currentWeather)
-    console.log("i am in weather info",weatherData)
-
 
     const convertTemperature = k => {
         const fahrenheit = (1.8 * (k - 273) + 32).toFixed(2);
@@ -15,8 +12,7 @@ const WeatherInfo = ({ weather }) => {
         return {
             fahrenheit,
             celsius
-        }
-
+        };
     };
 
     const testingWeatherObject = { 
@@ -31,7 +27,6 @@ const WeatherInfo = ({ weather }) => {
     };
 
     const iconSrc = `http://openweathermap.org/img/wn/${testingWeatherObject.icon}@4x.png`;
-    
 
     if (!weatherData) { 
         return (

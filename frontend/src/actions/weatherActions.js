@@ -11,10 +11,10 @@ export const receiveWeather = weather => ({
 export const receiveWeatherError = error => ({
     type: RECEIVE_WEATHER_ERROR,
     error,
-})
+});
 
-export const fetchWeather = (city) => dispatch => {
-    console.log("im here in actions");
+export const fetchWeather = city => dispatch => {
+    // console.log("im here in actions");
 
     return (
     fetchWeatherAPI(city)
