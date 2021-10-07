@@ -1,6 +1,9 @@
+$phone: 540px;
+$tablet: 760px;
 
-@media screen and (max-width: 632px) { 
-    .location-form { 
+
+@media screen and (max-width: $phone) { 
+    .location-form .location-input { 
         flex-direction: column;
     }
     

@@ -12,7 +12,6 @@ const LocationForm = ({ fetchWeather }) => {
 
 
     const handleCityChange = e => {
-        console.log(e)
         setCity(e.target.value)
     };
 

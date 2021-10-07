@@ -1,7 +1,6 @@
 import React from 'react';
 
 const WeatherInfo = ({ weather }) => { 
-    const currentWeather = weather;
     const temperatures = weather ? weather.main: '';
     const weatherData = weather.weather ? weather.weather[0] : '';
 
