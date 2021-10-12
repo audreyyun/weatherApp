@@ -1,8 +1,8 @@
 const mockWeather = 
 {
     "coord": {
-        "lon": -122.08,
-        "lat": 37.39
+        "lon": -118.2437,
+        "lat": 34.0522
     },
     "weather": [
         {
@@ -14,33 +14,33 @@ const mockWeather =
     ],
     "base": "stations",
     "main": {
-        "temp": 282.55,
-        "feels_like": 281.86,
-        "temp_min": 280.37,
-        "temp_max": 284.26,
-        "pressure": 1023,
-        "humidity": 100
+        "temp": 294.01,
+        "feels_like": 292.88,
+        "temp_min": 290.85,
+        "temp_max": 297.6,
+        "pressure": 1012,
+        "humidity": 28
     },
-    "visibility": 16093,
+    "visibility": 10000,
     "wind": {
-        "speed": 1.5,
-        "deg": 350
+        "speed": 2.68,
+        "deg": 215,
+        "gust": 0.45
     },
     "clouds": {
         "all": 1
     },
-    "dt": 1560350645,
+    "dt": 1634077448,
     "sys": {
         "type": 1,
-        "id": 5122,
-        "message": 0.0139,
+        "id": 3694,
         "country": "US",
-        "sunrise": 1560343627,
-        "sunset": 1560396563
+        "sunrise": 1634046948,
+        "sunset": 1634088154
     },
     "timezone": -25200,
-    "id": 420006353,
-    "name": "Mountain View",
+    "id": 5368361,
+    "name": "Los Angeles",
     "cod": 200
 }
 
