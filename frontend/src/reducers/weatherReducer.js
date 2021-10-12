@@ -1,7 +1,6 @@
 import { RECEIVE_WEATHER, RECEIVE_WEATHER_ERROR } from '../actions/weatherActions';
 
 const WeatherReducer = (state = {}, action) => {
-    console.log("I am in reducer", action)
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {

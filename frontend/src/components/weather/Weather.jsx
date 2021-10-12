@@ -1,11 +1,12 @@
 import React from 'react';
-import LocationForm from '../locationForm/LocationForm'
-import WeatherInfo from '../WeatherInfo/WeatherInfo'
+import styles from './Weather.module.scss';
+import LocationForm from '../LocationForm/LocationForm';
+import WeatherInfo from '../WeatherInfo/WeatherInfo';
 
 const Weather = ({ weather, fetchWeather }) => { 
     return (
-        <div className="weather-page-container">
-            <h1 className="app-title">Audrey's Weather App</h1>
+        <div className={styles.weatherPageContainer}>
+            <h1 className={styles.appTitle}>Audrey's Weather App</h1>
             
             <LocationForm fetchWeather={fetchWeather}/>
             <WeatherInfo weather={weather} />

@@ -1,4 +1,3 @@
-
 import { connect } from 'react-redux';
 import { fetchWeather } from '../../actions/weatherActions';
 import Weather from './Weather';

@@ -1,12 +1,13 @@
+@import '../../scss/style.scss';
 
-.weather-info-container { 
+.weatherInfoContainer { 
     display: flex;
     justify-content: center;
     padding-top: 20px;
 
 }
 
-.no-weather-info { 
+.noWeatherInfo { 
     display: flex;
     justify-content: center;
     padding: 2em 10px;
@@ -16,7 +17,7 @@
     color:rgb(255, 250, 158);
 }
 
-.weather-info { 
+.weatherInfo { 
     width: 550px;
     height: 600px;
     padding: 2em 4em;
@@ -24,7 +25,7 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
     line-height: 1.5em;
 
-    .weather-info-city { 
+    .weatherInfoCity { 
         display: flex;
         justify-content: center;
         font-size: 3em;

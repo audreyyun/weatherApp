@@ -1,13 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import classNames from 'classnames';
 import useLocation from '../../hooks/useLocation';
+import styles from './LocationForm.module.scss'
 
 const geolocationOptions = {
     timeout: 1000 * 60 * 1
 };
 
 const LocationForm = ({ fetchWeather }) => {
-    // console.log("I am in input", fetchWeather);
     const [city, setCity] = useState('');
+    //decide where/when to render error for geolocation 
     const { location, error } = useLocation(geolocationOptions);
 
 
@@ -16,7 +18,7 @@ const LocationForm = ({ fetchWeather }) => {
     };
 
     const handleFetchWeather = useCallback( async (location) => { 
-            fetchWeather(location) 
+                fetchWeather(location) 
     },[]);
 
     useEffect(() => {
@@ -30,10 +32,10 @@ const LocationForm = ({ fetchWeather }) => {
 
     return (
         <div>
-            <div className="location-form">
-                <div className="location-input">
-                    <input className='zipcode-search-input input' onChange={handleCityChange} placeholder=' Enter City Name'/>
-                    <button className="input location-input-btn" onClick={handleSubmit}>See Weather</button>
+            <div className={styles.locationForm}>
+                <div className={styles.locationInput}>
+                    <input className={classNames(styles.zipcodeSearchInput, styles.input)} onChange={handleCityChange} placeholder=' Enter City Name'/>
+                    <button className={classNames(styles.locationInputBtn, styles.input)} onClick={handleSubmit}>See Weather</button>
                 </div>
             </div>
         </div>

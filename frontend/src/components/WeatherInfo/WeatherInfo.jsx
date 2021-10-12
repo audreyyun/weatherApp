@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'; 
+import styles from './WeatherInfo.module.scss';
 
 const WeatherInfo = ({ weather }) => { 
     const temperatures = weather ? weather.main: '';
-    const weatherData = weather.weather ? weather.weather[0] : '';
+    const weatherData = weather?.weather ? weather.weather[0] : '';
 
     const convertTemperature = k => {
         const fahrenheit = (1.8 * (k - 273) + 32).toFixed(2);
@@ -18,7 +19,7 @@ const WeatherInfo = ({ weather }) => {
         icon: weatherData.icon,
         description: weatherData.description,
         main: weatherData.main,
-        city: weather.name,
+        city: weather?.name,
         currentTemp: convertTemperature(temperatures?.temp).fahrenheit,
         feels_like: convertTemperature(temperatures?.feels_like).fahrenheit,
         minTemp: convertTemperature(temperatures?.temp_min).fahrenheit,
@@ -30,14 +31,14 @@ const WeatherInfo = ({ weather }) => {
     if (!weatherData) { 
         return (
             <>
-                <div className="no-weather-info">Please enter a zip code and choose a country to see today's weather!</div>
+                <div className="no-weather-info">Please enter a city to see today's weather!</div>
             </>
         )
     } else { 
         return (
-            <div className="weather-info-container">
-                <div className="weather-info">
-                    <h1 className="weather-info-city">{testingWeatherObject.city}</h1>
+            <div className={styles.weatherInfoContainer}>
+                <div className={styles.weatherInfo}>
+                    <h1 className={styles.weatherInfoCity}>{testingWeatherObject.city}</h1>
                     <h3>{testingWeatherObject.description}</h3>
                     <img src={iconSrc} alt="weather icon" />
                     <p>Current Temperature: {testingWeatherObject.currentTemp} °F</p>

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather should render without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="weatherPageContainer"
+  >
+    <h1
+      class="appTitle"
+    >
+      Audrey's Weather App
+    </h1>
+    <div>
+      <div
+        class="locationForm"
+      >
+        <div
+          class="locationInput"
+        >
+          <input
+            class="zipcodeSearchInput input"
+            placeholder=" Enter City Name"
+          />
+          <button
+            class="locationInputBtn input"
+          >
+            See Weather
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="no-weather-info"
+    >
+      Please enter a zip code and choose a country to see today's weather!
+    </div>
+  </div>
+</DocumentFragment>
+`;

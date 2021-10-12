@@ -1,4 +1,6 @@
-.location-form { 
+@import '../../scss/style.scss';
+
+.locationForm { 
     height: auto;
     width: auto;
     justify-content: center;
@@ -7,7 +9,7 @@
     margin: 0 auto;
     margin-top: 2rem;
     
-    .location-input { 
+    .locationInput { 
         display: flex;
         justify-content: center;
         margin-top: -1px;
@@ -19,7 +21,7 @@
         border-radius: 0.5em;
     }
     
-    .country-search-input, .zipcode-search-input, .zipcode-search-input:focus  { 
+    .countrySearchInput, .zipcodeSearchInput, .zipcodeSearchInput:focus  { 
         border: 2px solid rgb(182, 198, 252);
         background-color: $dark;
         position: relative;
@@ -42,6 +44,6 @@
         margin: 0 5px;
 
         cursor: pointer;
-        // line-height: 1.3em;
     }
 }
+
