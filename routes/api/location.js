@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-// const WEATHER_API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+// const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
 
 router.get('/', async (req, res) => {
     try {
         console.log("this is req query",req.query)
-        const geoUrl =`http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=1&appid=0f2d288cb9bb3772fb2649a8e9613bd0`;
+        const geoUrl =`http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(geoUrl);
 
         res.send(response.data)
