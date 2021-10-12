@@ -6,7 +6,6 @@ const axios = require('axios');
 
 router.get('/', async (req, res) => {
     try {
-        console.log("this is req query",req.query)
         const geoUrl =`http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(geoUrl);
 

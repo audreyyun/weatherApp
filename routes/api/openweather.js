@@ -5,7 +5,6 @@ const axios = require('axios');
 // const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
 
 router.get('/', async (req, res) => { 
-    // console.log("this is req query",req.query)
     try { 
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${req.query.city}&appid=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(url);
