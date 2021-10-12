@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const weather = require('./routes/api/openweather');
+const geolocation = require('./routes/api/location')
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(express.json());
 
 //route
 app.use('/api/weather/', weather);
+app.use('/api/location/', geolocation)
 
 // app.get('*', (req, res) => {
 //     res.send('Page Not Found.')
