@@ -4,7 +4,7 @@ import configureStore from '../store/store';
 
 const store = configureStore();
 
-const TestProvider = ({ children }) => (
+const TestProvider = ({ children } : any) => (
     <Provider store={store}>
         {children}
     </Provider>

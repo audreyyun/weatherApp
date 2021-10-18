@@ -5,7 +5,7 @@ import React, {
 import { fetchLocation } from '../util/locationAPIUtil'
 
 const useLocation  = ( options = {} ) => { 
-    const [error, setError] = useState();
+    const [error, setError] = useState<string>();
     const [location, setLocation] = useState();
 
     useEffect(()=> {
@@ -23,11 +23,11 @@ const useLocation  = ( options = {} ) => {
         fetchLocation(latitude, longitude)
             .then(response => {
                 const { data } = response
-                setLocation(response.data[0].name)
+                setLocation(data[0].name)
             });
-    })
+    },[])
 
-    const handleError = error => {
+    const handleError = (error: any) => {
         setError(error.message);
     };
 

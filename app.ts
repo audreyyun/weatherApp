@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const router = express.Router();
-const weather = require('./routes/api/openweather');
-const geolocation = require('./routes/api/location')
-const dotenv = require('dotenv');
+import weather from './routes/api/openweather';
+import geolocation from './routes/api/location';
+import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 

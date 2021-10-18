@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchWeather } from '../../actions/weatherActions';
 import Weather from './Weather';
 
-const mSTP = state => {
+const mSTP = (state: { weather: any; weatherAPIerror: any; zip: number; country: string; }) => {
     return {
         weather: state.weather,
         weatherAPIerror: state.weatherAPIerror,
@@ -11,9 +11,9 @@ const mSTP = state => {
     };
 };
 
-const mDTP = dispatch => {
+const mDTP = (dispatch: any) => {
     return {
-        fetchWeather: (city) => dispatch(fetchWeather(city)),
+        fetchWeather: (city: any) => dispatch(fetchWeather(city)),
     }
 }
 

@@ -1,11 +1,19 @@
 import React from 'react'; 
 import styles from './WeatherInfo.module.scss';
 
-const WeatherInfo = ({ weather }) => { 
+type Props = { 
+    weather: {
+        main: any;
+        weather: any;
+        name: String;
+    }
+}
+
+const WeatherInfo = ({ weather } : Props) => { 
     const temperatures = weather ? weather.main: '';
     const weatherData = weather?.weather ? weather.weather[0] : '';
 
-    const convertTemperature = k => {
+    const convertTemperature = (k: number) => {
         const fahrenheit = (1.8 * (k - 273) + 32).toFixed(2);
         const celsius = (k - 273).toFixed(2);
 

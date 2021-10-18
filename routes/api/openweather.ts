@@ -1,10 +1,10 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const axios = require('axios');
+import axios from 'axios';
 
 // const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
 
-router.get('/', async (req, res) => { 
+router.get('/', async (req: { query: { city: string; }; }, res: { send: (arg0: any) => void; }) => { 
     try { 
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${req.query.city}&appid=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(url);
@@ -29,4 +29,4 @@ units	optional	Units of measurement. standard, metric and imperial units are ava
 lang	optional	You can use this parameter to get the output in your language. Learn more
 */
 
-module.exports = router;
+export default router;

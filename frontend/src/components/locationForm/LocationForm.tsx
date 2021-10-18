@@ -7,13 +7,17 @@ const geolocationOptions = {
     timeout: 1000 * 60 * 1
 };
 
-const LocationForm = ({ fetchWeather }) => {
-    const [city, setCity] = useState('');
+type Props = {
+    fetchWeather: Function
+}
+
+const LocationForm = ({ fetchWeather } : Props) => {
+    const [city, setCity] = useState<String | undefined>('');
     //decide where/when to render error for geolocation 
     const { location, error } = useLocation(geolocationOptions);
 
 
-    const handleCityChange = e => {
+    const handleCityChange = (e: any) => {
         setCity(e.target.value)
     };
 
