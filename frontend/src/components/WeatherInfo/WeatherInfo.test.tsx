@@ -3,12 +3,22 @@ import '@testing-library/jest-dom/extend-expect';
 import React from 'react'
 import WeatherInfo from './WeatherInfo'
 import { render } from '@testing-library/react'
-import TestProvider from '../../__test__/testProvider';
+import TestProvider from '../../__test__/TestProvider';
+// eslint-disable-next-line jest/no-mocks-import
+import mockWeather from '../../__mocks__/mockWeather';
 
 
+// jest.mock('./mockWeather', () => {
+    
+//     return {
+//         mockWeather: () => { 
+//             return mockWeather
+//         }
+//     }
+// })
 const WeatherInfoTest = () => (
     <TestProvider>
-        <WeatherInfo />
+        <WeatherInfo weather={mockWeather} />
     </TestProvider>
 );
 

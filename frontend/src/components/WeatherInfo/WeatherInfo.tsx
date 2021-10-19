@@ -49,7 +49,7 @@ type CurrentWeather = {
 }
 
 const WeatherInfo = ({ weather } : Props) => { 
-    console.log("this is weatherinfo", weather)
+    // console.log("this is weatherinfo", weather)
     const { data } = weather
     // const temperatures = weather ? weather.data?.main: '';
     // const weatherData = weather?.data ? weather.data.weather[0] : '';

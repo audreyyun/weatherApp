@@ -23,7 +23,7 @@ describe('LocationForm', () => {
 it('accepts an input value', () => {
     const component = render(<LocationForm />)
     
-    const searchInput = component.getByPlaceholderText('Enter City Name')
+    const searchInput = component.getByPlaceholderText('Enter City Name') as HTMLInputElement
     fireEvent.input(searchInput, { target: { value: 'Los Angeles' } })
     expect(searchInput.value).toBe('Los Angeles')
 })

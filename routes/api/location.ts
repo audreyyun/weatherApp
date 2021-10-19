@@ -8,6 +8,7 @@ router.get('/', async (req: { query: { lat: number; lon: number; }; }, res: { se
     try {
         const geoUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=5&appid=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(geoUrl);
+        
         res.send(response.data)
     } catch (error) {
         // console.log(error);

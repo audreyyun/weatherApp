@@ -20,9 +20,6 @@ const LocationForm = () => {
     const { location, error } = useLocation(geolocationOptions);
     const [weatherResponse, setWeatherResponse] = useState<any>({});
 
-    // console.log("my location is", response)
-    // console.log("my location is", location)
-
     const handleCityChange = (e: any) => {
         setCity(e.target.value)
     };
@@ -32,14 +29,14 @@ const LocationForm = () => {
             .then(weather => {
                 setWeatherResponse(weather)
             })
-            // .catch(err => dispatch(receiveWeatherError(err)))
+            // .catch(error => dispatch(receiveWeatherError(error)))
+            //how to dispatch error now that I dont have a container?
     },[]);
     
     useEffect(() => {
-            console.log(location)
             setCity(location);
             handleFetchWeather(location)
-    },[location]);
+    },[handleFetchWeather, location]); //tells me i need to have handleFetchWeather as a dependency but why?
         
     const handleSubmit = () => { 
         fetchWeather(city)

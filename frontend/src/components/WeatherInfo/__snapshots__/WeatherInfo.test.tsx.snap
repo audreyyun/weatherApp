@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherInfo should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="weatherInfoContainer"
+  >
+    <div
+      class="weatherInfo"
+    >
+      <h1
+        class="weatherInfoCity"
+      >
+        Los Angeles
+      </h1>
+      <h3>
+        clear sky
+      </h3>
+      <img
+        alt="weather icon"
+        src="http://openweathermap.org/img/wn/01d@4x.png"
+      />
+      <p>
+        Current Temperature: 69.82 °F
+      </p>
+      <br />
+      <p>
+        Feels Like: 67.78 °F
+      </p>
+      <p>
+        Min Temperature: 64.13 °F
+      </p>
+      <p>
+        Max Temperature: 76.28 °F
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

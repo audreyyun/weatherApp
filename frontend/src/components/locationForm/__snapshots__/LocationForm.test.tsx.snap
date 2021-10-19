@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationForm should render without crashing 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="locationForm"
+    >
+      <div
+        class="locationInput"
+      >
+        <input
+          class="zipcodeSearchInput input"
+          placeholder=" Enter City Name"
+        />
+        <button
+          class="locationInputBtn input"
+        >
+          See Weather
+        </button>
+      </div>
+    </div>
+    <div
+      class="no-weather-info"
+    >
+      Please enter a city to see today's weather!
+    </div>
+  </div>
+</DocumentFragment>
+`;
