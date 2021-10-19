@@ -1,15 +1,14 @@
 import React from 'react';
-import WeatherContainer from '../components/Weather/WeatherContainer';
+import Weather from '../components/Weather/Weather';
+// import WeatherContainer from '../components/Weather/WeatherContainer';
 // import '../scss/style.scss'
 
-// interface WeatherContainer { 
-
-// }
 
 const App = () => { 
   return(
     <div>
-        <WeatherContainer/>
+        <Weather/>
+        {/* <WeatherContainer/> */}
     </div>
   )
 }

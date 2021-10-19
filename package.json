@@ -10,6 +10,7 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build": "tsc -p tsconfig.json",
     "tsc-test": "tsc type-test.ts",
     "lint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix"
   },

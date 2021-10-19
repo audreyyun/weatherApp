@@ -2,7 +2,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react'
 import React from 'react'
 import LocationForm from './LocationForm'
-import TestProvider from '../../__test__/testProvider';
+import TestProvider from '../../__test__/TestProvider';
 
 
 const LocationFormTest = () => (

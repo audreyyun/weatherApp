@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import React from 'react'
 import Weather from './Weather'
 import { render } from '@testing-library/react'
-import TestProvider from '../../__test__/testProvider';
+import TestProvider from '../../__test__/TestProvider';
 
 
 const WeatherTest = () => (

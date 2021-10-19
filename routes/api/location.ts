@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 const router = express.Router();
 import axios from 'axios';
 
@@ -6,9 +6,8 @@ import axios from 'axios';
 
 router.get('/', async (req: { query: { lat: number; lon: number; }; }, res: { send: (arg0: any) => void; }) => {
     try {
-        const geoUrl =`http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=${process.env.OPENWEATHER_API_KEY}`;
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${req.query.lat}&lon=${req.query.lon}&limit=5&appid=${process.env.OPENWEATHER_API_KEY}`;
         const response = await axios.get(geoUrl);
-
         res.send(response.data)
     } catch (error) {
         // console.log(error);
